@@ -1,0 +1,1 @@
+{"1":{"aid":"1","name":"apache","version":"2.4.27","default":true},"2":{"aid":"2","name":"mysql","version":"5.6.37","default":true},"3":{"aid":"3","name":"php71","version":"7.1.8","default":false},"5":{"aid":"5","name":"php56","version":"5.6.31","default":true}}

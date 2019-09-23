@@ -1,0 +1,375 @@
+<?php
+
+/**
+ * This is a FILTER POINT in Softaculous.
+ * NOTE : You must rename this file to filter.php
+ */
+ 
+//////////////////////////////////////////////////////////////
+//===========================================================
+// filter.php
+//===========================================================
+// SOFTACULOUS 
+// Version : 1.1
+// Inspired by the DESIRE to be the BEST OF ALL
+// ----------------------------------------------------------
+// Started by: Alons
+// Date:       10th Jan 2009
+// Time:       21:00 hrs
+// Site:       http://www.softaculous.com/ (SOFTACULOUS)
+// ----------------------------------------------------------
+// Please Read the Terms of use at http://www.softaculous.com
+// ----------------------------------------------------------
+//===========================================================
+// (c)Softaculous Inc.
+//===========================================================
+//////////////////////////////////////////////////////////////
+
+if(!defined('SOFTACULOUS')){
+
+	die('Hacking Attempt');
+
+}
+
+
+//Check for cPanel EasyApache4 MultiPHP is present
+if(file_exists('/usr/local/cpanel')){
+	
+	@exec('perl -I/usr/local/cpanel -e "use Cpanel::Config::Httpd; print Cpanel::Config::Httpd::is_ea4();"', $mpout, $mpret);
+
+	//Include only if cPanel EasyApache4 MultiPHP is present
+	//Disabled for Softaculous Admin & CLI because UAPI/API2 can be used only when user is a cPanel user and not admin
+	if($mpout[0] == 1 && !defined('SOFTCLI') && !defined('SOFTADMIN')){
+	
+		function __multiphp_pre_install(){
+			global $softpanel, $l, $user, $protocols, $cpanel, $error, $__hooks, $scripts, $soft, $softins, $globals, $softdomain;
+			
+			if(defined('NO_REQUIREMENT')){
+				return true;
+			}
+			
+			//Since its pre_install hook, we do not have domain posted by the user yet, hence we take it viia POST here.
+			$softdomain = optPOST('softdomain', $l['no_softdomain']);
+			$softdomain = rawGPC($_POST['softdomain']);
+			
+			if(empty($softdomain)){
+				$softdomain = $softins['softdomain'];
+				
+				//Softdomain was not saved in installations.php in earlier Softaculous versions
+				if(empty($softdomain)){
+					$softdomain = parse_url($softins['softurl'], PHP_URL_HOST);
+				}
+			}
+			
+			if(empty($softdomain)){
+				return true;
+			}
+						
+			$get_vhost_versions = $cpanel->uapi('LangPHP', 'php_get_vhost_versions');
+			
+			//When the MultiPHP is disabled from Feature Manager
+			if(!empty($get_vhost_versions['cpanelresult']['result']['errors'])){
+				return true;
+			}
+			
+			foreach($get_vhost_versions['cpanelresult']['result']['data'] as $value){
+				$dom_ver[$value['vhost']] = $value['version'];
+				
+				//Support for USER MOD DIR domains version detection
+				if(!empty($value['main_domain']) && !empty($globals['user_mod_dir'])){
+					if(!empty($softpanel->umd_domroots)){
+						$u_m_d = key($softpanel->umd_domroots);
+						
+						if($softdomain == $u_m_d){
+							$softdomain = $value['vhost'];
+						}
+					}
+				}
+			}
+			
+			//PHP System Default Version
+			$get_sys_default_ver = $cpanel->uapi('LangPHP', 'php_get_system_default_version');
+			$sys_default_ver = $get_sys_default_ver['cpanelresult']['result']['data']['version'];
+			
+			$listsubdomains = $cpanel->api2('SubDomain', 'listsubdomains');
+			foreach($listsubdomains['cpanelresult']['data'] as $sdval){
+				$root_dom[$sdval['domain']] = $sdval['rootdomain'];
+			}
+			
+			//If cageFS is also present on the server
+			if(file_exists('/usr/bin/selectorctl')){
+				
+				//If cageFS is enabled for the user
+				@exec("/usr/bin/selectorctl --user-current --user=".$softpanel->user['name'].' 2>&1', $cout, $cret);
+				if($dom_ver[$softdomain] == $sys_default_ver && !preg_match('/ERROR/is', implode('', $cout))){
+					// If it is native then default System PHP Version will be considered i.e., default PHP selected for the binary.
+					if(!preg_match('/native/is', implode('', $cout))){
+						return true;
+					}
+				}
+			}
+			
+			if($dom_ver[$softdomain] == 'inherit'){
+				$rdomain = (!empty($root_dom[$softdomain]) ? $root_dom[$softdomain] : $softdomain);
+				
+				if(!empty($rdomain)){
+					if($dom_ver[$rdomain] == 'inherit'){
+						return true;
+						
+					}else{
+						$ea_multi_php_version = $dom_ver[$rdomain];
+						$multi_php_bin = '/opt/cpanel/'.$ea_multi_php_version.'/root/usr/bin/php';
+					}
+				}
+			}else{
+				$ea_multi_php_version = $dom_ver[$softdomain];
+				$multi_php_bin = '/opt/cpanel/'.$ea_multi_php_version.'/root/usr/bin/php';
+			}
+			
+			//If no php version selected for the domain via multiphp selector, then consider the default php version
+			if(empty($ea_multi_php_version)){
+				$multi_php_bin = $softpanel->ephp_bin;
+			}
+			
+			//PHP Version set based on the php binary detected
+			@exec($multi_php_bin.' -v', $out, $errtxt);
+			$pout = implode('', $out);
+			
+			preg_match('/PHP (.*?)\s/i', $pout, $output);
+			$tmp_out = $output[1];
+
+			(!empty($output[1]) ? $php_version = $output[1] : '');
+			
+			//PHP Extensions based on the detected php binary
+			if(!empty($ea_multi_php_version)){
+				//Added '-d zlib.output_compression=off' to turn off zlib compression and then fetch the extensions list as a lot of users were getting diamond shaped special string if zlib compression was ON on their server.
+				@exec($multi_php_bin.' -d zlib.output_compression=off -m', $extout, $extret);
+				if(!empty($extout) && is_array($extout)){
+					if(!empty($__hooks['loaded_extension']) && is_array($__hooks['loaded_extension'])){
+						$__hooks['loaded_extension'] = array_merge($__hooks['loaded_extension'], $extout);
+					}else{
+						$__hooks['loaded_extension'] = $extout;
+					}
+				}
+				
+				// these extensions are returned by php and we need to convert them all to same format
+				foreach($__hooks['loaded_extension'] as $ke => $ve){
+					$__hooks['loaded_extension'][$ke] = strtolower(str_replace(' ', '_', $ve));
+				}
+				
+				// This indicates that the PHP extensions list loaded in $__hooks is exhaustive list
+				if(!empty($__hooks['loaded_extension']) && empty($native)){
+					define('PHP_EXT_EXHAUSTIVE', 1);
+				}
+			}		
+				
+			$langphp = $cpanel->uapi('LangPHP', 'php_get_installed_versions');
+			$php_installed_vers = $langphp['cpanelresult']['result']['data']['versions'];
+			
+			sort($php_installed_vers);
+			if(!empty($scripts[$soft]['php_min'])){
+				
+				// Is it lower than the required version ?
+				if(sversion_compare($tmp_out, $scripts[$soft]['php_min'], '<')){
+					
+					// Can the required version be enabled ?
+					foreach($php_installed_vers as $ver){
+						$out = $errtxt = $output = array();
+						
+						@exec('/opt/cpanel/'.$ver.'/root/usr/bin/php -v', $out, $errtxt);
+						$pout = implode('', $out);
+						preg_match('/PHP (.*?)\s/i', $pout, $output);
+						
+						if(sversion_compare($output[1], $scripts[$soft]['php_min'], '>=')){
+							
+							if(!checkbox('php_version_select')){
+								$error[] = 'PHP version is less than the required '.$scripts[$soft]['php_min'].'<br />
+											<input type="checkbox" name="php_version_select" '.POSTChecked('php_version_select').' /> 
+											Do you wish to enable PHP '.$output[1].' ? (Might cause issues with your existing installations).';
+							// Lets enable the version for the user
+							}else{
+								$cpanel->uapi('LangPHP', 'php_set_vhost_versions', 
+																	array('vhost-1' => $softdomain,
+																		'version' => $ver));
+								
+								$ea_multi_php_version = $ver;
+								$php_version = $output[1];
+								$multi_php_bin = '/opt/cpanel/'.$ea_multi_php_version.'/root/usr/bin/php';
+							}
+							
+							break;
+						}
+					}
+				}
+			}
+			
+			rsort($php_installed_vers);		
+			if(!empty($scripts[$soft]['php_max'])){
+				
+				// Is it lower than the required version ?
+				if(sversion_compare($tmp_out, $scripts[$soft]['php_max'], '>')){
+					
+					// Can the required version be enabled ?
+					foreach($php_installed_vers as $ver){
+						$out = $errtxt = $output = array();
+						
+						@exec('/opt/cpanel/'.$ver.'/root/usr/bin/php -v', $out, $errtxt);
+						$pout = implode('', $out);
+						preg_match('/PHP (.*?)\s/i', $pout, $output);
+						
+						if(sversion_compare($output[1], $scripts[$soft]['php_max'], '<')){
+							
+							// Ask for a confirmation
+							if(!checkbox('php_max_version_select')){
+								$error[] = 'This script is not compatible with PHP version : '.$scripts[$soft]['php_max'].'+<br />
+										<input type="checkbox" name="php_max_version_select" '.POSTChecked('php_max_version_select').' /> 
+										Do you wish to enable PHP '.$output[1].' ? (Might cause issues with your existing installations).';
+							// Lets enable the version for the user
+							}else{
+								$cpanel->uapi('LangPHP', 'php_set_vhost_versions', 
+																	array('vhost-1' => $softdomain,
+																		'version' => $ver));
+								
+								$ea_multi_php_version = $ver;
+								$php_version = $output[1];
+								$multi_php_bin = '/opt/cpanel/'.$ea_multi_php_version.'/root/usr/bin/php';
+							}
+							
+							break;
+						}
+					}
+				}
+			}
+			
+			if(!empty($ea_multi_php_version)) define('ea_multi_php_version', $ea_multi_php_version);
+			if(!empty($php_version)) define('php_version', $php_version);
+			if(!empty($multi_php_bin)) define('eu_php_bin', $multi_php_bin);
+				
+		}
+
+		function __multiphp_post_unzip(){
+			global $cpanel, $__settings, $softdomain;
+			
+			if(defined('NO_REQUIREMENT')){
+				return true;
+			}
+			
+			//Restore the user's selected php version
+			if(defined('ea_multi_php_version')){
+				$cpanel->uapi('LangPHP', 'php_set_vhost_versions', 
+							array('vhost-1' => $softdomain,
+								'version' => ea_multi_php_version));
+			}
+		}
+		
+		// @param	array $installation Details of the new installation
+		function __multiphp_post_install($installation){
+			global $cpanel, $softdomain;
+			
+			if(defined('NO_REQUIREMENT')){
+				return true;
+			}
+			
+			//Restore the user's selected php version
+			if(defined('ea_multi_php_version')){
+				$cpanel->uapi('LangPHP', 'php_set_vhost_versions', 
+							array('vhost-1' => $softdomain,
+								'version' => ea_multi_php_version));
+			}
+		}
+
+		// @param	array $installation Details of the installation being removed
+		function __multiphp_pre_remove($installation){
+			global $cpanel, $globals, $softpanel, $softdomain;
+			
+			if(defined('NO_REQUIREMENT')){
+				return true;
+			}
+			
+			$softdomain = $installation['softdomain'];
+			
+			//Determine the user's selected php version		
+			$get_vhost_versions = $cpanel->uapi('LangPHP', 'php_get_vhost_versions');
+			foreach($get_vhost_versions['cpanelresult']['result']['data'] as $value){
+				
+				if(!empty($value['main_domain']) && !empty($globals['user_mod_dir'])){
+					
+					if(!empty($softpanel->umd_domroots)){
+						$u_m_d = key($softpanel->umd_domroots);
+						
+						if($softdomain == $u_m_d){
+							define('ea_multi_php_version', $value['version']);
+							$softdomain = $value['vhost'];
+							break;
+						}
+					}
+				}
+				
+				if($value['vhost'] == $softdomain){
+					define('ea_multi_php_version', $value['version']);
+					break;
+				}
+			}
+		}
+		
+		function __multiphp_post_remove($installation){
+			global $cpanel, $softdomain;
+			
+			if(defined('NO_REQUIREMENT')){
+				return true;
+			}
+			
+			//Restore the user's selected php version
+			if(defined('ea_multi_php_version')){
+				$cpanel->uapi('LangPHP', 'php_set_vhost_versions', 
+							array('vhost-1' => $softdomain,
+								'version' => ea_multi_php_version));
+			}
+		}
+		
+		//This filter is for checking if non EA4 content .htaccess then only ask for overwrite
+		function __multiphp_check_files_exist($exists){
+			global $soft, $software, $globals, $__settings;
+			
+			if(sfile_exists($__settings['softpath'].'/.htaccess') && in_array('.htaccess', $exists)){
+				$ea_data = file($__settings['softpath'].'/.htaccess');
+				//r_print($ea_data);
+				foreach($ea_data as $k=> $v){
+					$v = trim($v);
+					if(preg_match('/[^#](\s*?)--(\s*?)BEGIN(\s*?)cPanel-generated(\s*?)handler/is', $v)){
+						$ignore = 1;
+					}
+					if(preg_match('/[^#](\s*?)--(\s*?)END(\s*?)cPanel-generated(\s*?)handler/is', $v)){
+						$ignore = 0;
+					}
+					
+					if(empty($ignore) && !preg_match('/^#/is',$v) && !empty($v)){
+						$show_overwrite = 1;
+					}	
+				}
+				
+				if(empty($show_overwrite)){
+					$htaccess_key = array_search('.htaccess', $exists);
+					unset($exists[$htaccess_key]);
+				}
+				
+			}
+			
+			return $exists;
+			
+		}
+
+		// Temporarily disabled because cPanel API in WHM 11.62.0.x fails the php_set_vhost_versions uapi causing the $cpanel to be destroyed eventually causing all API calls to fail
+		
+		insert_filter('pre_install', '__multiphp_pre_install', 1);
+		insert_filter('post_unzip', '__multiphp_post_unzip', 1);
+		insert_filter('post_install', '__multiphp_post_install', 1, 1);
+		insert_filter('pre_remove', '__multiphp_pre_remove', 1, 1);
+		insert_filter('post_remove', '__multiphp_post_remove', 1, 1);
+		insert_filter('pre_upgrade', '__multiphp_pre_install', 1, 1);
+		insert_filter('post_upgrade', '__multiphp_post_install', 1, 1);
+		insert_filter('check_files_exist', '__multiphp_check_files_exist', 1, 1);
+	
+	}
+
+}

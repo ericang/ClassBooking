@@ -1,0 +1,155 @@
+[Sun Sep 08 17:08:34.547901 2019] [mpm_winnt:notice] [pid 8416:tid 576] AH00455: Apache/2.4.27 (Win32) OpenSSL/1.1.0f PHP/5.6.31 configured -- resuming normal operations
+[Sun Sep 08 17:08:34.547901 2019] [mpm_winnt:notice] [pid 8416:tid 576] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 11:43:51
+[Sun Sep 08 17:08:34.547901 2019] [core:notice] [pid 8416:tid 576] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Program Files (x86)/Ampps/apache'
+[Sun Sep 08 17:08:34.551891 2019] [mpm_winnt:notice] [pid 8416:tid 576] AH00418: Parent: Created child process 14644
+[Sun Sep 08 17:08:35.269996 2019] [mpm_winnt:notice] [pid 14644:tid 736] AH00354: Child: Starting 64 worker threads.
+[Sun Sep 08 17:16:01.162504 2019] [:error] [pid 14644:tid 1536] [client ::1:60489] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in C:\\Program Files (x86)\\Ampps\\www\\book-2.php on line 16, referer: http://localhost/
+[Sun Sep 08 17:16:01.165579 2019] [:error] [pid 14644:tid 1536] [client ::1:60489] PHP Stack trace:, referer: http://localhost/
+[Sun Sep 08 17:16:01.165579 2019] [:error] [pid 14644:tid 1536] [client ::1:60489] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\book-2.php:0, referer: http://localhost/
+[Sun Sep 08 17:16:01.165579 2019] [:error] [pid 14644:tid 1536] [client ::1:60489] PHP   2. mysqli->mysqli() C:\\Program Files (x86)\\Ampps\\www\\book-2.php:16, referer: http://localhost/
+[Sun Sep 08 17:19:48.914761 2019] [:error] [pid 14644:tid 1536] [client ::1:60511] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in C:\\Program Files (x86)\\Ampps\\www\\book-3.php on line 17, referer: http://localhost/
+[Sun Sep 08 17:19:48.914761 2019] [:error] [pid 14644:tid 1536] [client ::1:60511] PHP Stack trace:, referer: http://localhost/
+[Sun Sep 08 17:19:48.914761 2019] [:error] [pid 14644:tid 1536] [client ::1:60511] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\book-3.php:0, referer: http://localhost/
+[Sun Sep 08 17:19:48.914761 2019] [:error] [pid 14644:tid 1536] [client ::1:60511] PHP   2. mysqli->mysqli() C:\\Program Files (x86)\\Ampps\\www\\book-3.php:17, referer: http://localhost/
+[Sun Sep 08 17:26:08.039016 2019] [access_compat:error] [pid 14644:tid 1496] [client ::1:60579] AH01797: client denied by server configuration: C:/Program Files (x86)/Ampps/SQliteManager, referer: http://localhost/ampps/
+[Sun Sep 08 17:26:24.107491 2019] [cgi:error] [pid 14644:tid 1504] [client ::1:60583] AH02811: script not found or unable to stat: C:/Program Files (x86)/Ampps/ampps/softaculous/enduser/book.php
+[Sun Sep 08 23:10:15.499758 2019] [:error] [pid 14644:tid 1496] [client ::1:62781] script 'C:/Program Files (x86)/Ampps/www/book-4.php' not found or unable to stat
+[Sat Sep 21 17:57:27.308540 2019] [mpm_winnt:notice] [pid 11132:tid 692] AH00455: Apache/2.4.27 (Win32) OpenSSL/1.1.0f PHP/5.6.31 configured -- resuming normal operations
+[Sat Sep 21 17:57:27.309051 2019] [mpm_winnt:notice] [pid 11132:tid 692] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 11:43:51
+[Sat Sep 21 17:57:27.309051 2019] [core:notice] [pid 11132:tid 692] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Program Files (x86)/Ampps/apache'
+[Sat Sep 21 17:57:27.310051 2019] [mpm_winnt:notice] [pid 11132:tid 692] AH00418: Parent: Created child process 11164
+[Sat Sep 21 17:57:27.985829 2019] [mpm_winnt:notice] [pid 11164:tid 704] AH00354: Child: Starting 64 worker threads.
+[Sat Sep 21 19:07:55.685310 2019] [mpm_winnt:notice] [pid 5260:tid 700] AH00455: Apache/2.4.27 (Win32) OpenSSL/1.1.0f PHP/5.6.31 configured -- resuming normal operations
+[Sat Sep 21 19:07:55.685310 2019] [mpm_winnt:notice] [pid 5260:tid 700] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 11:43:51
+[Sat Sep 21 19:07:55.685310 2019] [core:notice] [pid 5260:tid 700] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Program Files (x86)/Ampps/apache'
+[Sat Sep 21 19:07:55.687118 2019] [mpm_winnt:notice] [pid 5260:tid 700] AH00418: Parent: Created child process 12196
+[Sat Sep 21 19:07:56.353952 2019] [mpm_winnt:notice] [pid 12196:tid 712] AH00354: Child: Starting 64 worker threads.
+[Sat Sep 21 19:12:22.689039 2019] [mpm_winnt:notice] [pid 5060:tid 708] AH00455: Apache/2.4.27 (Win32) OpenSSL/1.1.0f PHP/5.6.31 configured -- resuming normal operations
+[Sat Sep 21 19:12:22.689039 2019] [mpm_winnt:notice] [pid 5060:tid 708] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 11:43:51
+[Sat Sep 21 19:12:22.689039 2019] [core:notice] [pid 5060:tid 708] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Program Files (x86)/Ampps/apache'
+[Sat Sep 21 19:12:22.692057 2019] [mpm_winnt:notice] [pid 5060:tid 708] AH00418: Parent: Created child process 10140
+[Sat Sep 21 19:12:23.351553 2019] [mpm_winnt:notice] [pid 10140:tid 720] AH00354: Child: Starting 64 worker threads.
+[Sat Sep 21 19:12:29.815024 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62305] PHP Warning:  mysqli::mysqli(): (HY000/2002): No connection could be made because the target machine actively refused it.\r\n in C:\\Program Files (x86)\\Ampps\\www\\book-5.php on line 17, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:29.815024 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62305] PHP Stack trace:, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:29.815024 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62305] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:0, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:29.815024 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62305] PHP   2. mysqli->mysqli() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:17, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:32.689919 2019] [:error] [pid 10140:tid 1532] [client 127.0.0.1:62306] PHP Warning:  mysqli::mysqli(): (HY000/2002): No connection could be made because the target machine actively refused it.\r\n in C:\\Program Files (x86)\\Ampps\\www\\book-5.php on line 17, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:32.689919 2019] [:error] [pid 10140:tid 1532] [client 127.0.0.1:62306] PHP Stack trace:, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:32.689919 2019] [:error] [pid 10140:tid 1532] [client 127.0.0.1:62306] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:0, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:32.689919 2019] [:error] [pid 10140:tid 1532] [client 127.0.0.1:62306] PHP   2. mysqli->mysqli() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:17, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:34.329787 2019] [:error] [pid 10140:tid 952] [client 127.0.0.1:62309] PHP Warning:  mysqli::mysqli(): (HY000/2002): No connection could be made because the target machine actively refused it.\r\n in C:\\Program Files (x86)\\Ampps\\www\\book-5.php on line 17, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:34.329787 2019] [:error] [pid 10140:tid 952] [client 127.0.0.1:62309] PHP Stack trace:, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:34.329787 2019] [:error] [pid 10140:tid 952] [client 127.0.0.1:62309] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:0, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:34.329787 2019] [:error] [pid 10140:tid 952] [client 127.0.0.1:62309] PHP   2. mysqli->mysqli() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:17, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:34.511531 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62311] PHP Warning:  mysqli::mysqli(): (HY000/2002): No connection could be made because the target machine actively refused it.\r\n in C:\\Program Files (x86)\\Ampps\\www\\book-5.php on line 17, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:34.511531 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62311] PHP Stack trace:, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:34.511531 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62311] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:0, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:34.511531 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62311] PHP   2. mysqli->mysqli() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:17, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:38.546765 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62311] PHP Warning:  mysqli::mysqli(): (HY000/2002): No connection could be made because the target machine actively refused it.\r\n in C:\\Program Files (x86)\\Ampps\\www\\book-5.php on line 17, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:38.546765 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62311] PHP Stack trace:, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:38.546765 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62311] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:0, referer: http://127.0.0.1/
+[Sat Sep 21 19:12:38.546765 2019] [:error] [pid 10140:tid 1536] [client 127.0.0.1:62311] PHP   2. mysqli->mysqli() C:\\Program Files (x86)\\Ampps\\www\\book-5.php:17, referer: http://127.0.0.1/
+[Sat Sep 21 19:14:14.887543 2019] [mpm_winnt:notice] [pid 7024:tid 716] AH00455: Apache/2.4.27 (Win32) OpenSSL/1.1.0f PHP/5.6.31 configured -- resuming normal operations
+[Sat Sep 21 19:14:14.887543 2019] [mpm_winnt:notice] [pid 7024:tid 716] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 11:43:51
+[Sat Sep 21 19:14:14.887543 2019] [core:notice] [pid 7024:tid 716] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Program Files (x86)/Ampps/apache'
+[Sat Sep 21 19:14:14.889514 2019] [mpm_winnt:notice] [pid 7024:tid 716] AH00418: Parent: Created child process 3228
+[Sat Sep 21 19:14:15.535347 2019] [mpm_winnt:notice] [pid 3228:tid 720] AH00354: Child: Starting 64 worker threads.
+[Sat Sep 21 19:15:43.481585 2019] [mpm_winnt:notice] [pid 11084:tid 808] AH00455: Apache/2.4.27 (Win32) OpenSSL/1.1.0f PHP/5.6.31 configured -- resuming normal operations
+[Sat Sep 21 19:15:43.481585 2019] [mpm_winnt:notice] [pid 11084:tid 808] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 11:43:51
+[Sat Sep 21 19:15:43.481585 2019] [core:notice] [pid 11084:tid 808] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Program Files (x86)/Ampps/apache'
+[Sat Sep 21 19:15:43.484601 2019] [mpm_winnt:notice] [pid 11084:tid 808] AH00418: Parent: Created child process 13584
+[Sat Sep 21 19:15:44.239039 2019] [mpm_winnt:notice] [pid 13584:tid 720] AH00354: Child: Starting 64 worker threads.
+[Sat Sep 21 21:08:24.917837 2019] [:error] [pid 13584:tid 1464] [client 127.0.0.1:63040] PHP Parse error:  syntax error, unexpected 'header' (T_STRING) in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Login.php on line 40
+[Sat Sep 21 21:08:27.201658 2019] [:error] [pid 13584:tid 1464] [client 127.0.0.1:63040] PHP Parse error:  syntax error, unexpected 'header' (T_STRING) in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Login.php on line 40
+[Sat Sep 21 21:08:27.722586 2019] [:error] [pid 13584:tid 1464] [client 127.0.0.1:63040] PHP Parse error:  syntax error, unexpected 'header' (T_STRING) in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Login.php on line 40
+[Sun Sep 22 11:37:26.406511 2019] [mpm_winnt:notice] [pid 12948:tid 256] AH00455: Apache/2.4.27 (Win32) OpenSSL/1.1.0f PHP/5.6.31 configured -- resuming normal operations
+[Sun Sep 22 11:37:26.406511 2019] [mpm_winnt:notice] [pid 12948:tid 256] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 11:43:51
+[Sun Sep 22 11:37:26.406511 2019] [core:notice] [pid 12948:tid 256] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Program Files (x86)/Ampps/apache'
+[Sun Sep 22 11:37:26.409510 2019] [mpm_winnt:notice] [pid 12948:tid 256] AH00418: Parent: Created child process 13524
+[Sun Sep 22 11:37:27.077131 2019] [mpm_winnt:notice] [pid 13524:tid 720] AH00354: Child: Starting 64 worker threads.
+[Sun Sep 22 11:40:14.282857 2019] [:error] [pid 13524:tid 1544] [client ::1:64305] PHP Fatal error:  Call to a member function close() on null in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 50, referer: http://localhost/ClassBooking_Login.php
+[Sun Sep 22 11:40:14.282857 2019] [:error] [pid 13524:tid 1544] [client ::1:64305] PHP Stack trace:, referer: http://localhost/ClassBooking_Login.php
+[Sun Sep 22 11:40:14.282857 2019] [:error] [pid 13524:tid 1544] [client ::1:64305] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Login.php
+[Sun Sep 22 12:23:15.029761 2019] [:error] [pid 13524:tid 1544] [client ::1:64488] PHP Parse error:  syntax error, unexpected '--' (T_DEC) in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Login.php on line 36
+[Sun Sep 22 17:06:36.450254 2019] [mpm_winnt:notice] [pid 9888:tid 720] AH00455: Apache/2.4.27 (Win32) OpenSSL/1.1.0f PHP/5.6.31 configured -- resuming normal operations
+[Sun Sep 22 17:06:36.450254 2019] [mpm_winnt:notice] [pid 9888:tid 720] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 11:43:51
+[Sun Sep 22 17:06:36.450254 2019] [core:notice] [pid 9888:tid 720] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Program Files (x86)/Ampps/apache'
+[Sun Sep 22 17:06:36.452248 2019] [mpm_winnt:notice] [pid 9888:tid 720] AH00418: Parent: Created child process 7276
+[Sun Sep 22 17:06:37.111318 2019] [mpm_winnt:notice] [pid 7276:tid 720] AH00354: Child: Starting 64 worker threads.
+[Sun Sep 22 17:06:45.389305 2019] [:error] [pid 7276:tid 1496] [client ::1:65262] PHP Parse error:  syntax error, unexpected '=' in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Login.php on line 40
+[Sun Sep 22 17:07:21.126213 2019] [:error] [pid 7276:tid 1492] [client ::1:65264] PHP Parse error:  syntax error, unexpected end of file in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Login.php on line 64
+[Sun Sep 22 17:07:21.765649 2019] [:error] [pid 7276:tid 1492] [client ::1:65264] PHP Parse error:  syntax error, unexpected end of file in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Login.php on line 64
+[Sun Sep 22 18:07:41.463282 2019] [:error] [pid 7276:tid 1492] [client ::1:49583] script 'C:/Program Files (x86)/Ampps/www/action_page.php' not found or unable to stat, referer: http://localhost/ClassBooking_Student.php?username=&formSubmit=Login
+[Sun Sep 22 18:15:36.942733 2019] [:error] [pid 7276:tid 1492] [client ::1:49630] script 'C:/Program Files (x86)/Ampps/www/ClassBooking_Admid.php' not found or unable to stat, referer: http://localhost/ClassBooking_Login.php?usernamelogin=&formSubmit=Login
+[Sun Sep 22 19:51:56.499648 2019] [:error] [pid 7276:tid 1476] [client ::1:50744] PHP Fatal error:  Call to a member function fetch_array() on boolean in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 44, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 19:51:56.499648 2019] [:error] [pid 7276:tid 1476] [client ::1:50744] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 19:51:56.499648 2019] [:error] [pid 7276:tid 1476] [client ::1:50744] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:11:44.458233 2019] [:error] [pid 7276:tid 1492] [client ::1:50883] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 103, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:11:44.458233 2019] [:error] [pid 7276:tid 1492] [client ::1:50883] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:11:44.459230 2019] [:error] [pid 7276:tid 1492] [client ::1:50883] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:11:44.459230 2019] [:error] [pid 7276:tid 1492] [client ::1:50883] PHP   2. mysqli->query() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:103, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:12:36.770279 2019] [:error] [pid 7276:tid 1476] [client ::1:50897] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 103, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:12:36.770279 2019] [:error] [pid 7276:tid 1476] [client ::1:50897] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:12:36.770279 2019] [:error] [pid 7276:tid 1476] [client ::1:50897] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:12:36.770279 2019] [:error] [pid 7276:tid 1476] [client ::1:50897] PHP   2. mysqli->query() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:103, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:13:41.852781 2019] [:error] [pid 7276:tid 1492] [client ::1:50901] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 103, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:13:41.852781 2019] [:error] [pid 7276:tid 1492] [client ::1:50901] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:13:41.852781 2019] [:error] [pid 7276:tid 1492] [client ::1:50901] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:13:41.852781 2019] [:error] [pid 7276:tid 1492] [client ::1:50901] PHP   2. mysqli->query() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:103, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:13:41.852781 2019] [:error] [pid 7276:tid 1492] [client ::1:50901] PHP Fatal error:  Call to a member function close() on null in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 104, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:13:41.852781 2019] [:error] [pid 7276:tid 1492] [client ::1:50901] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:13:41.852781 2019] [:error] [pid 7276:tid 1492] [client ::1:50901] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:14:55.823615 2019] [:error] [pid 7276:tid 1496] [client ::1:50915] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 103, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:14:55.823615 2019] [:error] [pid 7276:tid 1496] [client ::1:50915] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:14:55.823615 2019] [:error] [pid 7276:tid 1496] [client ::1:50915] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:14:55.823615 2019] [:error] [pid 7276:tid 1496] [client ::1:50915] PHP   2. mysqli->query() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:103, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:14:55.824519 2019] [:error] [pid 7276:tid 1496] [client ::1:50915] PHP Fatal error:  Call to a member function close() on null in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 104, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:14:55.824519 2019] [:error] [pid 7276:tid 1496] [client ::1:50915] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:14:55.824519 2019] [:error] [pid 7276:tid 1496] [client ::1:50915] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:29:23.846601 2019] [:error] [pid 7276:tid 1496] [client ::1:50960] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 104, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:29:23.847598 2019] [:error] [pid 7276:tid 1496] [client ::1:50960] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:29:23.847598 2019] [:error] [pid 7276:tid 1496] [client ::1:50960] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:29:23.847598 2019] [:error] [pid 7276:tid 1496] [client ::1:50960] PHP   2. mysqli->query() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:104, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:29:23.847598 2019] [:error] [pid 7276:tid 1496] [client ::1:50960] PHP Fatal error:  Call to a member function close() on null in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 105, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:29:23.847598 2019] [:error] [pid 7276:tid 1496] [client ::1:50960] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:29:23.847598 2019] [:error] [pid 7276:tid 1496] [client ::1:50960] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:32:29.612226 2019] [:error] [pid 7276:tid 1492] [client ::1:50984] PHP Fatal error:  Call to a member function close() on boolean in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 100, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:32:29.612226 2019] [:error] [pid 7276:tid 1492] [client ::1:50984] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:32:29.612226 2019] [:error] [pid 7276:tid 1492] [client ::1:50984] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:32:31.296006 2019] [:error] [pid 7276:tid 1492] [client ::1:50984] PHP Fatal error:  Call to a member function close() on boolean in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 100, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:32:31.297002 2019] [:error] [pid 7276:tid 1492] [client ::1:50984] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:32:31.297002 2019] [:error] [pid 7276:tid 1492] [client ::1:50984] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:32:33.317965 2019] [:error] [pid 7276:tid 1492] [client ::1:50984] PHP Fatal error:  Call to a member function close() on boolean in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 100, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:32:33.317965 2019] [:error] [pid 7276:tid 1492] [client ::1:50984] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:32:33.317965 2019] [:error] [pid 7276:tid 1492] [client ::1:50984] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:37:57.179837 2019] [:error] [pid 7276:tid 1496] [client ::1:51029] PHP Fatal error:  Call to a member function close() on boolean in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 100, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:37:57.179837 2019] [:error] [pid 7276:tid 1496] [client ::1:51029] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:37:57.179837 2019] [:error] [pid 7276:tid 1496] [client ::1:51029] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:39:54.918734 2019] [:error] [pid 7276:tid 1492] [client ::1:51042] PHP Fatal error:  Call to a member function close() on boolean in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 100, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:39:54.918734 2019] [:error] [pid 7276:tid 1492] [client ::1:51042] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:39:54.918734 2019] [:error] [pid 7276:tid 1492] [client ::1:51042] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:51.738672 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP Warning:  date() expects at least 1 parameter, 0 given in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:51.738672 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:51.738672 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:51.738672 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP   2. date() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:54.740611 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP Warning:  date() expects at least 1 parameter, 0 given in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:54.741608 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:54.741608 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:54.741608 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP   2. date() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:59.366506 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP Warning:  date() expects at least 1 parameter, 0 given in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:59.367426 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:59.367426 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:43:59.367426 2019] [:error] [pid 7276:tid 1492] [client ::1:51093] PHP   2. date() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:44:54.948655 2019] [:error] [pid 7276:tid 1496] [client ::1:51102] PHP Warning:  date() expects at least 1 parameter, 0 given in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:44:54.948655 2019] [:error] [pid 7276:tid 1496] [client ::1:51102] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:44:54.948655 2019] [:error] [pid 7276:tid 1496] [client ::1:51102] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:44:54.948655 2019] [:error] [pid 7276:tid 1496] [client ::1:51102] PHP   2. date() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:44:58.679686 2019] [:error] [pid 7276:tid 1496] [client ::1:51102] PHP Warning:  date() expects at least 1 parameter, 0 given in C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php on line 96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:44:58.679686 2019] [:error] [pid 7276:tid 1496] [client ::1:51102] PHP Stack trace:, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:44:58.679686 2019] [:error] [pid 7276:tid 1496] [client ::1:51102] PHP   1. {main}() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:0, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 20:44:58.679686 2019] [:error] [pid 7276:tid 1496] [client ::1:51102] PHP   2. date() C:\\Program Files (x86)\\Ampps\\www\\ClassBooking_Student.php:96, referer: http://localhost/ClassBooking_Student.php
+[Sun Sep 22 21:00:21.727933 2019] [mpm_winnt:notice] [pid 5636:tid 708] AH00455: Apache/2.4.27 (Win32) OpenSSL/1.1.0f PHP/5.6.31 configured -- resuming normal operations
+[Sun Sep 22 21:00:21.727933 2019] [mpm_winnt:notice] [pid 5636:tid 708] AH00456: Apache Lounge VC15 Server built: Jul  7 2017 11:43:51
+[Sun Sep 22 21:00:21.727933 2019] [core:notice] [pid 5636:tid 708] AH00094: Command line: 'apache\\bin\\httpd.exe -d C:/Program Files (x86)/Ampps/apache'
+[Sun Sep 22 21:00:21.729903 2019] [mpm_winnt:notice] [pid 5636:tid 708] AH00418: Parent: Created child process 9032
+[Sun Sep 22 21:00:22.389354 2019] [mpm_winnt:notice] [pid 9032:tid 720] AH00354: Child: Starting 64 worker threads.
